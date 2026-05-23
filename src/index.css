@@ -6,13 +6,17 @@
   --font-display: "Space Grotesk", sans-serif;
   --color-bg: var(--bg);
   --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
   --color-card: var(--card);
   --color-border: var(--border);
 }
 
 :root {
   --bg: #030303;
-  --text: #ffffff;
+  --text: #f5f5f5;
+  --text-secondary: #cfcfcf;
+  --text-muted: #9ca3af;
   --card: #0a0a0a;
   --border: rgba(255, 255, 255, 0.05);
   --glow-color: rgba(255, 255, 255, 0.05);
@@ -21,8 +25,10 @@
 [data-theme='light'] {
   --bg: #fafafa;
   --text: #171717;
+  --text-secondary: #3f3f46;
+  --text-muted: #71717a;
   --card: #ffffff;
-  --border: rgba(0, 0, 0, 0.08);
+  --border: rgba(0, 0, 0, 0.1);
   --glow-color: rgba(0, 0, 0, 0.05);
 }
 
@@ -31,17 +37,6 @@ body {
   color: var(--text);
   @apply font-sans transition-colors duration-300;
   scroll-behavior: smooth;
-}
-
-.bg-dot-grid {
-  background-image: radial-gradient(var(--text) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse at center, black, transparent 80%);
-  opacity: 0.03;
-}
-
-[data-theme='light'] .bg-dot-grid {
-  opacity: 0.05;
 }
 
 .selection-colors {
@@ -54,14 +49,5 @@ body {
     opacity: 0.05;
     pointer-events: none;
     mix-blend-mode: overlay;
-  }
-
-  .glow {
-    background: radial-gradient(circle at 50% 50%, var(--glow-color) 0%, transparent 70%);
-  }
-
-  .blob {
-    filter: blur(80px);
-    border-radius: 50%;
   }
 }
